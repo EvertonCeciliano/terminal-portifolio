@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #00ff00;
+    overflow: hidden;
+}
+
+#terminal {
+    border: 0.2em solid #0F0; /* Adiciona a borda verde apenas ao redor do terminal */
+    box-shadow: 0 0 1em rgba(0, 255, 0, 0.1); 
+    padding: 20px;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+#menu {
+    margin-bottom: 10px;
+}
+
+.menu-option {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.menu-option.selected {
+    background-color: #333; /* Cor de fundo destacada */
+    color: #00ff00; /* Cor do texto destacado */
+}
+
+#output {
+    height: 80%;
+    overflow-y: auto;
+}
+
+#input-line {
+    display: flex;
+    align-items: center;
+}
+
+.prompt {
+    color: #00ff00;
+    margin-right: 10px;
+}
+
+/* Adicionando espaçamento entre as linhas no conteúdo */
+#output div {
+    margin-bottom: 8px;
+}
+
+/* Adiciona um efeito CRT ao texto */
+html {
+    background: #000;
+    padding: 1em;
+    font-family: 'Noto Sans Display', sans-serif;
+    color: #0F0;
+    font-size: 1em;
+    line-height: 1;
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+    letter-spacing: 0.125em;
+    animation-duration: 0.01s;
+    animation-name: textflicker;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* Adiciona uma borda ao redor do texto para simular a tela CRT */
+body {
+    margin: 1em;
+}
+
+/* Ajusta o estilo do h1 */
+h1 {
+    font-size: 5em;
+    text-align: center;
+    margin: 0;
+}
+
+/* Ajusta a cor dos links para branco */
+a {
+    color: #0F0;
+}
+
+/* Adiciona um efeito CRT aos links */
+a:hover {
+    text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+}
+
+/* Adiciona um efeito CRT ao texto durante a animação */
+@keyframes textflicker {
+    from {
+        text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+    }
+    to {
+        text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+    }
+}
+
+/* ... Seu CSS existente ... */
+
+/* Adiciona regras de mídia para dispositivos móveis */
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 15px;
+        margin: 0.5em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    #terminal {
+        width: 100%;
+    }
+
+    #output {
+        display: block;
+        max-height: calc(100vh - 220px);
+        overflow-y: auto;
+        white-space: pre-wrap;
+    }
+
+    #output div {
+        overflow: hidden;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+}
